@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trump Speech Editor v0.1</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/url.js"></script>
+    <script type="text/javascript" src="js/video.js"></script>
+    <script type="text/javascript">
+	
+	var params = get_tse_parameters();
+
+	// Loads the IFrame Player API code asynchronously and put it before the first script tag.
+	var tag = document.createElement('script');
+	tag.src = "https://www.youtube.com/player_api";
+	var firstScriptTag = document.getElementsByTagName('script')[0];
+	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+	
+	var tse_player;
+	
+	// YOUTUBE API Callback
+	function onYouTubePlayerAPIReady()
+	{
+		// Get the video parameters passed via GET
+		params = get_tse_parameters();
+		
+		// Width and Height of the video (based on the title div width)
+		video_width = document.getElementById("title").offsetWidth;
+		video_height = parseInt( video_width / 1.7 );
+		
+		// Initializes the player for the given video and intervals.
+		// Put it on the tse-viewer div with 640 of width and 390 of height.
+		tse_player = new TSE_Player( params.v, params.i, "tse-viewer", video_width, video_height );
+	}
+	
+</script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6 col-xs-12">
+				<h1 id="title">Trump Speech Editor v0.1</h1>
+			</div>
+		</div>
+		<!-- The first step. The user should provide a video id. -->
+		<div class="row">
+			<div class="col-md-6 col-xs-12">
+				<div id="tse-viewer"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
