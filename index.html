@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>Trump Speech Editor by marciojmo</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Trump Speech Editor</h1>
+        <h2></h2>
+
+        <section id="downloads">
+          <a href="https://github.com/marciojmo/trump-speech-editor/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/marciojmo/trump-speech-editor/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/marciojmo/trump-speech-editor" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h3>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introduction</h3>
+
+<p>Trump Speech Editor is a javascript project that allows you to mute sections of a youtube video. </p>
+
+<p><a href="http://marciojmo.github.io/trump-speech-editor/editor.html">Click here to Start</a>.</p>
+
+<p><a href="https://marciojmo.github.io/trump-speech-editor/view.html?v=tLSy8Tl2bjs&amp;i=34,56;73,82;">Click here to see a working example</a>.</p>
+
+<p>I've created this project because of this tweet:</p>
+
+<div>
+<blockquote>
+<p lang="en" dir="ltr">Someone should try editing a video of Trump speaking and removing the sound whenever he's saying something false.</p>— Paul Graham (<a href="https://github.com/paulg">@paulg</a>) <a href="https://twitter.com/paulg/status/764879003513651200">August 14, 2016</a>
+</blockquote>
+</div>
+
+<p>Paul is one of my top influencers, so I decided to create a funny gift to thank him for all the business lessons and maybe get connected to get a startup advice in the future. =P</p>
+
+<h3>
+<a id="the-editor" class="anchor" href="#the-editor" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The Editor</h3>
+
+<p>The editor allows you to select sections of a YouTube video and generate a URL to visualize the video with the selected sections silenced.</p>
+
+<h3>
+<a id="the-viewer" class="anchor" href="#the-viewer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The Viewer</h3>
+
+<p>The viewer is responsible for playing the video and for controling the video's volume. It receives a video_id and a list of non overlaping, ordered, time intervals to mute. </p>
+
+<h3>
+<a id="know-bugs" class="anchor" href="#know-bugs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Know Bugs</h3>
+
+<ul>
+<li>The editor is not checking if the id provided by the user is a valid Youtube video id.</li>
+<li>The player is not handling when the user moves the video forward or rewind it.</li>
+<li>If the list of intervals to mute is unordered or overlaped the viewer may not work.</li>
+<li>There is probably more bugs, but the MVP is working fine.</li>
+</ul>
+
+<h3>
+<a id="support--contributions" class="anchor" href="#support--contributions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support &amp; Contributions</h3>
+
+<p>If you liked this project and would like to contribute and improve it please contact me on twitter <a href="https://github.com/marciojmo" class="user-mention">@marciojmo</a>. =)</p>
+
+<ul>
+<li>Handle forward/rewind.</li>
+<li>Integrate with a URL shortener.</li>
+<li>Integrate with some voice recognition and truth checking artificial intelligence to auto-mute Trump's videos. hahaha</li>
+</ul>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
