@@ -34,6 +34,17 @@
       {
 		  // Get useful values
           video_id = $("#video-url").val();
+		  
+		  // Check if an URL was provided an extracts the video id
+		  if ( video_id.indexOf( "youtube.com" ) !== -1 )
+		  {
+				video_id = video_id.split('v=')[1];
+				var ampersandPosition = video_id.indexOf('&');
+				if(ampersandPosition != -1) {
+					video_id = video_id.substring(0, ampersandPosition);
+				}
+		  }
+		  
 		  video_width = $("#title").width();
 		  video_height = parseInt( video_width / 1.7 );
 		  
@@ -263,7 +274,7 @@
 		<div class="row">
 			<div class="col-md-6 col-xs-12">
 				<div id="step-one" class="input-group">
-					<input type="text" id="video-url" class="form-control" placeholder="Insert an youtube video ID">
+					<input type="text" id="video-url" class="form-control" placeholder="Insert an youtube video ID or URL">
 					<span class="input-group-btn">
 					<button id="load-video" class="btn btn-primary">Load Video</button>
 					</span>
